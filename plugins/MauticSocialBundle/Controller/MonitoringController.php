@@ -78,6 +78,7 @@ class MonitoringController extends FormController
 
         $tmpl = $this->request->isXmlHttpRequest() ? $this->request->get('tmpl', 'index') : 'index';
 
+        
         return $this->delegateView(
             [
                 'viewParameters' => [
@@ -87,8 +88,9 @@ class MonitoringController extends FormController
                     'model'       => $model,
                     'tmpl'        => $tmpl,
                     'page'        => $page,
+                    'security'    => $this->container->get('mautic.security'),
                 ],
-                'contentTemplate' => 'MauticSocialBundle:Monitoring:list.html.php',
+                'contentTemplate' => 'MauticSocialBundle:Monitoring:list.html.twig',
                 'passthroughVars' => [
                     'activeLink'    => '#mautic_social_index',
                     'mauticContent' => 'monitoring',
@@ -469,7 +471,7 @@ class MonitoringController extends FormController
                     )->getContent(),
                     'dateRangeForm' => $dateRangeForm->createView(),
                 ],
-                'contentTemplate' => 'MauticSocialBundle:Monitoring:'.$tmpl.'.html.php',
+                'contentTemplate' => 'MauticSocialBundle:Monitoring:'.$tmpl.'.html.twig',
                 'passthroughVars' => [
                     'activeLink'    => '#mautic_social_index',
                     'mauticContent' => 'monitoring',

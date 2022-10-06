@@ -1,0 +1,34 @@
+{% extends 'MauticCoreBundle:Default:content.html.twig' %}
+{% block mauticContent %}
+			monitoring
+		{% endblock %}
+		{% block headerTitle %}
+			{% trans %}
+			mautic.social.monitoring
+			{% endtrans %}
+		{% endblock %}
+
+		{% block actions %}
+			{{- include('MauticCoreBundle:Helper:page_actions.html.twig',
+    {
+        'templateButtons': {
+            'new': security.isGranted('mauticSocial:monitoring:create'),
+        },
+        'routeBase': 'social',
+        'langVar': 'monitoring'
+    })-}}
+		{% endblock %}
+
+		{% block content %}
+        {{ tmpl }}
+			<div class="panel panel-default bdr-t-wdh-0 mb-0">
+				{{- include('MauticCoreBundle:Helper:list_toolbar.html.twig', {
+        'searchValue': searchValue,
+        'action': currentRoute,
+    }) -}}
+				<div class="page-list">
+					{{- include('MauticSocialBundle:Monitoring:list_body.html.twig') -}}
+
+				</div>
+			</div>
+		{% endblock %}

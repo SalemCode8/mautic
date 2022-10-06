@@ -1174,6 +1174,10 @@ return [
                 ],
                 'tag'       => 'twig.extension',
             ],
+            'templating.twig.extenstion.object' => [
+                'class' => \Mautic\CoreBundle\Templating\Twig\Extension\ObjectExtension::class,
+                'tag'       => 'twig.extension',
+            ],
             // Schema
             'mautic.schema.helper.column' => [
                 'class'     => 'Mautic\CoreBundle\Doctrine\Helper\ColumnSchemaHelper',
