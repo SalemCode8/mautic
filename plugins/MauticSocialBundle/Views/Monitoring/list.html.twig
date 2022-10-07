@@ -74,18 +74,19 @@
 				<tbody>
 					{% for item in items %}
 						<tr>
-							<td>{# TODO: Enabled when find solution to name issue #}
-								{# {{- include('MauticCoreBundle:Helper:list_actions.html.twig', {
-																										                                        item : item,
-																										                                        templateButtons : {
-																										                                            edit   : security.isGranted('mauticSocial:monitoring:edit'),
-																										                                            delete : security.isGranted('mauticSocial:monitoring:delete'),
-																										                                        },
-																										                                        routeBase  : 'social',
-																										                                        langVar    : 'mautic.social.monitoring',
-																										                                        nameGetter: 'getTitle'
-																										                                    }
-																										                                ) -}} #}
+							<td>
+								{# TODO: Enabled when find solution to name issue #}
+								{{- include('MauticCoreBundle:Helper:list_actions.html.twig', {
+										item : item,
+										templateButtons : {
+											edit   : security.isGranted('mauticSocial:monitoring:edit'),
+											delete : security.isGranted('mauticSocial:monitoring:delete'),
+										},
+										routeBase  : 'social',
+										langVar    : 'mautic.social.monitoring',
+										nameGetter: 'getTitle'
+									}
+								) -}}
 							</td>
 							<td>
 								<div>
