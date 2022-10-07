@@ -45,6 +45,7 @@ class OutlookIntegration extends AbstractIntegration
      */
     public function getFormNotes($section)
     {
+        // TODO: Change to twig version once PluginBundle is ready
         if ('custom' === $section) {
             return [
                 'template'   => 'MauticOutlookBundle:Integration:form.html.php',

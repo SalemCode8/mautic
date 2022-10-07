@@ -14,6 +14,7 @@ if (!$hasSupportedFeatures = (isset($form['supportedFeatures']) && count($form['
     }
 }
 
+
 if (!$hasFields = (!empty($formSettings['dynamic_contact_fields']) || isset($form['featureSettings']) && count($form['featureSettings']['leadFields']))) {
     // Unset if set to prevent features tab from showing when there's no feature to show
     unset($form['featureSettings']['leadFields']);
